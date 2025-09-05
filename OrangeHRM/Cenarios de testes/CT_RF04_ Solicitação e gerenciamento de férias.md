@@ -26,6 +26,9 @@
 **CENÁRIO TESTADO E EVIDENCIADO** ---- **REPROVADO**
 [https://jam.dev/c/47801990-bc3f-4931-a43f-a1ebcf7f41bd]
 
+**CENÁRIO RETESTADO E EVIDENCIADO** ---- **APROVADO**
+[https://jam.dev/c/78ffc5a0-251d-4470-bc85-8114bf445f8a]
+
 ---
 
 ### Caso de Teste 02: Tentativa de solicitar férias sem selecionar tipo de licença.
