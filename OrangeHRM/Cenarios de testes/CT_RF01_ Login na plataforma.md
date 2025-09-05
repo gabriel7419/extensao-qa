@@ -68,3 +68,15 @@
 | **Critérios de aceitação**                                      |
 | :-------------------------------------------------------------- |
 | Os campos obrigatórios devem exibir mensagens de validação.     |
+
+
+Cenários Executados e Evidenciados: 
+
+Caso 1:
+https://jam.dev/c/abd2603c-f554-46ee-9804-8085771fb167
+
+Caso 2:
+https://jam.dev/c/4f942e93-3778-4a12-a248-1155fde48112
+
+Caso 3:
+https://jam.dev/c/8908c540-901e-4ded-a92a-14a08db31161
