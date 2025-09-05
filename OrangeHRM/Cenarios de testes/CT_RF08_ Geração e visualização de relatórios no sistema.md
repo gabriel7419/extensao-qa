@@ -21,6 +21,9 @@
 | :-------------------------------------------------------------- |
 | O relatório deve apresentar os dados corretos conforme os filtros aplicados. |
 
+**TESTE EVIDENCIADO E APROVADO** 
+[https://jam.dev/c/6f29d9ce-f28b-4b95-a975-56427aa6d697]
+
 ---
 
 ### Caso de Teste 02: Gerar relatório sem selecionar filtros obrigatórios.
@@ -44,6 +47,9 @@
 | :-------------------------------------------------------------- |
 | O sistema deve bloquear a geração do relatório e exibir erro claro. |
 
+**TESTE EVIDENCIADO E REPROVADO**
+[https://jam.dev/c/09b3606d-ae8f-412e-aab4-9d71262e140a]
+
 ---
 
 ### Caso de Teste 03: Exportar relatório gerado em PDF.
@@ -65,3 +71,6 @@
 | **Critérios de aceitação**                                      |
 | :-------------------------------------------------------------- |
 | O download do arquivo PDF deve ocorrer com os dados exibidos na tela. |
+
+**TESTE EVIDENCIADO E REPROVADO**
+[https://jam.dev/c/68508551-7504-48b7-be66-9315e47626b6]
