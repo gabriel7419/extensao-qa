@@ -1,80 +1,80 @@
-## Cenário 04: Solicitação e gerenciamento de férias.
+## Cenário 05: Gerenciamento de candidatos no módulo de Recrutamento.
 
-### Caso de Teste 01: Solicitação de férias com datas válidas.
-
-| ID       | Descrição                                                               |
-| :------- | :---------------------------------------------------------------------- |
-| C04-CT01 | O usuário deve conseguir solicitar férias informando um período válido. |
-
-| **Pré-condições**                                             |
-| :------------------------------------------------------------ |
-| O usuário deve estar logado e com acesso ao módulo "Leave".   |
-
-| **Passos**                                                        |
-| :---------------------------------------------------------------- |
-| **DADO** que o usuário acessa o menu \"Leave\"                   |
-| **E** clica em \"Apply\"                                         |
-| **E** seleciona um tipo de licença (ex: Annual Leave)            |
-| **E** escolhe um período válido de início e fim                 |
-| **QUANDO** clicar em \"Apply\"                                   |
-| **ENTÃO** a solicitação deve ser registrada com sucesso          |
-
-| **Critérios de aceitação**                                      |
-| :-------------------------------------------------------------- |
-| A solicitação deve aparecer listada em \"My Leave\".            |
-
-**CENÁRIO TESTADO E EVIDENCIADO** ---- **REPROVADO**
-[https://jam.dev/c/47801990-bc3f-4931-a43f-a1ebcf7f41bd]
-
----
-
-### Caso de Teste 02: Tentativa de solicitar férias sem selecionar tipo de licença.
-
-| ID       | Descrição                                                                         |
-| :------- | :-------------------------------------------------------------------------------- |
-| C04-CT02 | O sistema deve impedir a solicitação de férias sem o tipo de licença selecionado. |
-
-| **Pré-condições**                                             |
-| :------------------------------------------------------------ |
-| O usuário deve estar logado e acessar a tela de aplicação de licença. |
-
-| **Passos**                                                        |
-| :---------------------------------------------------------------- |
-| **DADO** que o usuário acessa o menu \"Leave\"                   |
-| **E** clica em \"Apply\"                                         |
-| **E** deixa o campo \"Leave Type\" em branco                    |
-| **E** seleciona um período de data válido                       |
-| **QUANDO** clicar em \"Apply\"                                   |
-| **ENTÃO** uma mensagem de erro deve ser exibida solicitando o preenchimento do tipo de licença |
-
-| **Critérios de aceitação**                                      |
-| :-------------------------------------------------------------- |
-| A aplicação deve ser bloqueada e o erro deve ser exibido ao usuário. |
-
-**CENÁRIO TESTADO E EVIENCIADO** ----- **REPROVADO**
-
-[https://jam.dev/c/ed526744-38e4-4cd7-aa2d-bae063364ea8]
-
----
-
-### Caso de Teste 03: Visualizar status das solicitações de férias.
+### Caso de Teste 01: Adicionar um novo candidato com dados válidos.
 
 | ID       | Descrição                                                              |
-| :------- | :--------------------------------------------------------------------- |
-| C04-CT03 | O sistema deve exibir corretamente o status das férias solicitadas.    |
+| :------- | :---------------------------------------------------------------------- |
+| C05-CT01 | O sistema deve permitir adicionar um novo candidato com informações válidas. |
 
 | **Pré-condições**                                             |
 | :------------------------------------------------------------ |
-| O usuário deve ter ao menos uma solicitação de férias registrada. |
+| O usuário deve estar logado e ter acesso ao módulo "Recruitment". |
 
 | **Passos**                                                        |
 | :---------------------------------------------------------------- |
-| **DADO** que o usuário acessa o menu \"My Leave\"                |
-| **QUANDO** a lista de solicitações for exibida                  |
-| **ENTÃO** o status de cada solicitação (Aprovado, Pendente, Rejeitado) deve estar visível |
+| **DADO** que o usuário acessa o menu \"Recruitment\"             |
+| **E** clica em \"Add\"                                           |
+| **E** preenche os campos obrigatórios (nome, vaga, e-mail)       |
+| **QUANDO** clicar em \"Save\"                                    |
+| **ENTÃO** o candidato deve ser adicionado à lista de candidatos  |
 
 | **Critérios de aceitação**                                      |
 | :-------------------------------------------------------------- |
-| Os status devem refletir corretamente o estado da solicitação.  |
+| O candidato deve ser exibido corretamente na lista após o cadastro. |
 
-**TESTE INVIÁVEL - FUNCIONAMENTO INCORRETO DA PÁGINA DE FÉRIAS/FOLGA**
+**CENÁRIO TESTADO E EVIDENCIADO**
+[https://jam.dev/c/22332a49-4a02-4544-953b-e41b7f9a9956]
+
+---
+
+### Caso de Teste 02: Tentar adicionar candidato sem preencher campos obrigatórios.
+
+| ID       | Descrição                                                                     |
+| :------- | :------------------------------------------------------------------------------ |
+| C05-CT02 | O sistema deve exibir mensagens de erro ao tentar cadastrar um candidato sem preencher os campos obrigatórios. |
+
+| **Pré-condições**                                             |
+| :------------------------------------------------------------ |
+| O usuário deve estar logado no sistema.                       |
+
+| **Passos**                                                        |
+| :---------------------------------------------------------------- |
+| **DADO** que o usuário acessa o menu \"Recruitment\"             |
+| **E** clica em \"Add\"                                           |
+| **E** não preenche os campos obrigatórios                       |
+| **QUANDO** clicar em \"Save\"                                    |
+| **ENTÃO** mensagens de erro devem ser exibidas em cada campo obrigatório |
+
+| **Critérios de aceitação**                                      |
+| :-------------------------------------------------------------- |
+| Os campos obrigatórios devem ser validados com mensagens de erro. |
+
+**CENÁRIO TESTADO E EVIDENCIADO**
+[https://jam.dev/c/99670a12-c47d-46c1-9538-14f0e1e9e02a]
+
+---
+
+### Caso de Teste 03: Buscar candidato cadastrado pelo nome.
+
+| ID       | Descrição                                                        |
+| :------- | :---------------------------------------------------------------- |
+| C05-CT03 | O sistema deve retornar corretamente um candidato pesquisado pelo nome. |
+
+| **Pré-condições**                                             |
+| :------------------------------------------------------------ |
+| O candidato deve estar cadastrado no sistema.                 |
+
+| **Passos**                                                        |
+| :---------------------------------------------------------------- |
+| **DADO** que o usuário acessa o menu \"Recruitment\"             |
+| **E** digita o nome do candidato no campo de busca              |
+| **QUANDO** clicar no botão \"Search\"                           |
+| **ENTÃO** o sistema deve listar corretamente o candidato correspondente |
+
+| **Critérios de aceitação**                                      |
+| :-------------------------------------------------------------- |
+| O candidato pesquisado deve ser exibido na lista de resultados. |
+
+**CENÁRIO TESTADO E EVIDENCIADO**
+**PARCIALMENTE APROVADO - DISCREPÂNCIA NA PESQUISA**
+[https://jam.dev/c/e3a876aa-eb39-4a93-ace6-88c71769a78b]
